@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    <label for="email">email</label>
+    <input type="email">
+    <button>submit</button>
+  </form>
+
+  <p><a href="{% url 'password_reset' %}">Pamiršote slaptažodį?</a></p>
+
+{% endblock %}
