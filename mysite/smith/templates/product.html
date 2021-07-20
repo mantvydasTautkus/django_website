@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for each in product_img. %}
+
+<div> {{ each.images }}vbnbcv</div>
+
+{% endfor %}
+
+
+{% for each in product_img %}
+
+            <p>{{ each.images}}</p>
+            <img src="..\media\{{each.images}}" alt="...">
+
+        {% endfor %}
+
+
+    <img src="..\media\{{product.image}}" alt="...">
+
+{% endblock %}

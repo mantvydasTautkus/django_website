@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% for galery_item in galery_items.object_list %}
+        <div><a href="{{ galery_item.id }}">{{ galery_item.name }} {{ galery_item.description }}<img src="..\media\{{galery_item.image}}" alt="..."></a></div>
+    {% endfor %}
+<h1>hello </h1>
+{% endblock %}
+

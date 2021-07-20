@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+        {% for each in photos %}
+
+            <p>{{ each.images}}</p>
+            <img src="..\media\{{each.images}}" alt="...">
+
+        {% endfor %}
+
+
+        <img src="..\media\{{post.image}}" alt="...">
+
+<h1>hellooo </h1>
+{% endblock %}

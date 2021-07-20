@@ -9,21 +9,67 @@
     <title>Document</title>
 </head>
 <body>
-    {% block sidebar %}
+    {% block top_nav %}
+    {% load i18n%}
     <header>
         <ul>
-            <li>homepage</li>
-            <li>shop</li>
-            <li><a href="{% url 'subscribe' %}">subscribe</a></li>
-            <li>abaut us</li>
-            <li>offers</li>
-            <li>products</li>
-            <li><a href="{% url 'admin' %}">admin</a></li>
+            <li><a href="\">{% trans "Products" %}</a></li>
+            <li><a href={% url 'galery' %}>{% trans "Galery"%}</a></li>
+            <li><a href="{% url 'abaut_us' %}">{% trans "Abaut us"%}</a></li>
+            <li><a href="{% url 'subscribe' %}">{% trans "Subscribe"%}</a></li>
+            <li><a href="{% url 'admin' %}">{% trans "Admin"%}</a></li>
         </ul>
+            <form action="{% url 'set_language' %}" method="post">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}"/>
+                <select name="language" onchange="this.form.submit()">
+                {% load static %}
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% for lang in LANGUAGES %}
+                <option style="background-image: url({% static 'img/lt.png' %});" value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %} selected="selected" {% endif %}>
+                    {{ lang.0 }}
+                </option>
+                {% endfor %}
+                </select>
+            </form>
     </header>
     {% endblock %}
-    <section>
-        {% block content %}{% endblock %}
-    </section>
+    {% block content %}
+
+        <h2>Total Number of items: {{ count }}</h2>
+        {% for product in page.object_list %}
+            {% if product.image %}
+                <div><a href="{{ product.id }}"><img src="..\media\{{product.image}}" alt=""></a></div>
+            {% else %}
+                <div>{{ product.name }} {{ product.price }}<img src="..\media\img\placeholder.png" alt=""></div>
+            {% endif %}
+        {% endfor %}
+
+        <div class="page-links">
+            {% if page.has_previous %}
+            <a href="{% url 'base' %}?page={{ page.previous_page_number }}">Previous Page</a>
+            {% endif %}
+            <a>Page Number: {{ page.number }}</a>
+            {% if page.has_next %}
+            <a href="{% url 'base' %}?page={{ page.next_page_number }}">Next Page</a>
+            {% endif %}
+        </div>
+
+    {% endblock %}
+
+
+    {% block footer %} 
+    <footer>
+        <ul>
+            <li><a href="#">facebook</a></li>
+            <li><a href="#">email</a></li>
+            <li><a href="#">instagram</a></li>
+        </ul>
+    </footer>
+    
+    {% endblock %}
+
+    
 </body>
 </html>
