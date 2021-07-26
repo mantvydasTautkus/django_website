@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n%}
 
 {% block content %}
     <section class="galery_wrapper">
@@ -8,8 +9,16 @@
                     <a href="{{ galery_item.id }}">
                         <img class="galery_img" src="..\media\{{galery_item.image}}" alt="...">
                         <div class="galery_item_name">
-                            <h1 class="galery_text">{{ galery_item.name }}</h1>
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% if LANGUAGE_CODE == "lt" %}
+                                <h1 class="galery_text">{{galery_item.name}}</h1>
+                               <h3>{{product.description}}</h3>
+                            {% else %}
+                                <h1 class="galery_text">{{galery_item.name_en}}</h1>
+                            {% endif %}
                         </div>
+
+
                     </a>
                 </div>
             {% endfor %}

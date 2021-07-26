@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-19 13:04+0300\n"
+"POT-Creation-Date: 2021-07-26 13:46+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,30 +20,142 @@ msgstr ""
 "11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? "
 "1 : n % 1 != 0 ? 2: 3);\n"
 
-#: .\mysite\settings.py:104
-msgid "English"
-msgstr "Anglu"
+#: .\models.py:9
+msgid "Item name"
+msgstr "Pavadinimas"
 
-#: .\mysite\settings.py:105
-msgid "Lithuanian"
-msgstr "Lietuviu"
+#: .\models.py:10 .\templates\product.html:47
+msgid "Height"
+msgstr "Aukštis"
 
-#: .\smith\templates\base.html:16
+#: .\models.py:11
+msgid "Whith"
+msgstr "Plotis"
+
+#: .\models.py:12
+msgid "Lenght"
+msgstr "Ilgis"
+
+#: .\models.py:13
+msgid "Description"
+msgstr "Aprašymas"
+
+#: .\models.py:14 .\templates\product.html:29
+msgid "Price"
+msgstr "Kaina"
+
+#: .\models.py:16
+msgid "main image"
+msgstr "Pagrindine nuotrauka"
+
+#: .\templates\base.html:25
 msgid "Products"
 msgstr "Gaminiai"
 
-#: .\smith\templates\base.html:17
+#: .\templates\base.html:26
 msgid "Galery"
 msgstr "Galerija"
 
-#: .\smith\templates\base.html:19
-msgid "Subscribe"
-msgstr "Prenumeruoti"
+#: .\templates\base.html:27
+msgid "About us"
+msgstr "Apie mus"
 
-#: .\smith\templates\base.html:20
-msgid "Admin"
+#: .\templates\base.html:45
+msgid "Hello"
+msgstr "Labas"
+
+#: .\templates\base.html:51 .\templates\register.html:41
+msgid "Login"
+msgstr "prisijungti"
+
+#: .\templates\base.html:54 .\templates\register.html:38
+msgid "Register"
+msgstr "Registruotis"
+
+#: .\templates\base.html:88
+msgid "Items that are availible right now!!"
+msgstr "Prekės kurias turime sandelyje"
+
+#: .\templates\login.html:5
+msgid "log in"
+msgstr "prisijungti"
+
+#: .\templates\product.html:32
+msgid "Name:"
+msgstr "Vardas"
+
+#: .\templates\product.html:34
+msgid "Description:"
+msgstr "Aprašymas"
+
+#: .\templates\product.html:36
+msgid "Measurements:"
+msgstr "Išmatavimai"
+
+#: .\templates\product.html:38
+msgid "@mail:"
+msgstr "El. Paštas"
+
+#: .\templates\product.html:40
+msgid "Mobile:"
+msgstr "Mobilus nr."
+
+#: .\templates\product.html:47
+msgid "width"
+msgstr "Plotis"
+
+#: .\templates\product.html:47
+msgid "length"
+msgstr "Ilgis"
+
+#: .\templates\register.html:16
+msgid "Registration"
+msgstr "Registruotis"
+
+#: .\templates\register.html:20 .\views.py:95
+msgid "User name"
+msgstr "Vartotojo vardas"
+
+#: .\templates\register.html:22
+msgid "up to 150 simbols"
 msgstr ""
 
-#: .\smith\views.py:16
-msgid "hello"
+#: .\templates\register.html:25
+msgid "@mail"
 msgstr ""
+
+#: .\templates\register.html:27
+msgid "only for pasword , no spam no shearing"
+msgstr "Slaptažodzio keitimui"
+
+#: .\templates\register.html:30
+msgid "Pasword"
+msgstr "Slaptazodis"
+
+#: .\templates\register.html:32
+msgid "At least 8 simbols"
+msgstr "Ne maziau 8 simboliu"
+
+#: .\templates\register.html:35
+msgid "Repeat pasword"
+msgstr "Pakartokite slaptazodi"
+
+#: .\templates\register.html:41
+msgid "Already registered ? "
+msgstr "Jau prisiregistrave ?"
+
+#: .\views.py:95
+msgid "taken"
+msgstr "Užimtas"
+
+#: .\views.py:101
+msgid "User with @mail"
+msgstr "Vartotojas su "
+
+#: .\views.py:101
+msgid "allready exists"
+msgstr "Jau prisiregistrave ?"
+
+#: .\views.py:109
+msgid "Passwords do not mach"
+msgstr "Slaptažodziai nesutampa"

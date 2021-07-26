@@ -1,23 +1,24 @@
 from os import name
-from django.core.paginator import EmptyPage
 from django.db import models
 from django.db.models.base import Model
 from django.urls import reverse
-import uuid
+from django.utils.translation import gettext_lazy 
 
 
 class Product(models.Model):
-    name = models.CharField("Names", max_length=200, null=True)
-    height = models.IntegerField("Height", help_text="how tall is the item in cm ", null=True)
-    whith = models.IntegerField("Whith", help_text="how wide is the item in cm", null=True)
-    lenght = models.IntegerField("Lenght", help_text="how wide is the item in cm", null=True)
-    description = models.CharField("Description", max_length=400, null=True)
-    price = models.IntegerField("Price", help_text="price in euro", null=True)
+    name_lt = models.CharField(gettext_lazy("Item name"), max_length=200, null=True)
+    name_en = models.CharField(gettext_lazy("Item name en"), max_length=200, null=True)
+    height = models.IntegerField(gettext_lazy("Height"), help_text="how tall is the item in cm ", null=True)
+    whith = models.IntegerField(gettext_lazy("Whith"), help_text="how wide is the item in cm", null=True)
+    lenght = models.IntegerField(gettext_lazy("Lenght"), help_text="how wide is the item in cm", null=True)
+    description = models.CharField(gettext_lazy("Description_lt"), max_length=400, null=True)
+    description_en = models.CharField(gettext_lazy("Description_en"), max_length=400, null=True)
+    price = models.IntegerField(gettext_lazy("Price"), help_text="price in euro", null=True)
     smith_id = models.ForeignKey("Smiths", max_length=50, on_delete=models.SET_NULL, null=True, help_text="who made the item")
-    image = models.ImageField("main image", upload_to="img", null=True)
+    image = models.ImageField(gettext_lazy("main image"), upload_to="img", null=True)
 
     def __str__(self):
-        return f" name:{ self.name } {self.price} "
+        return f" name:{ self.name_lt } {self.price} "
 
 class ProductImages(models.Model):
     product = models.ForeignKey(Product, default=None, on_delete=models.CASCADE, null=True)
@@ -29,11 +30,12 @@ class Landing_photos(models.Model):
     image = models.ImageField("third", upload_to="img", null=True)
 
 class GaleryItem(models.Model):
-    name = models.CharField("Names", max_length=200, null=True)
+    name = models.CharField("Pavadinimas", max_length=200, null=True)   
+    name_en = models.CharField("Name_en", max_length=200, null=True)
     image = models.ImageField("main foto", upload_to="img", null=True)
 
     def __str__(self):
-        return f" name:{ self.name }   "
+        return f" { self.name }   "
 
 
 class GaleryImages(models.Model):

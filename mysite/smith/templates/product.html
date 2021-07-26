@@ -29,10 +29,11 @@
                 <h1>{% trans "Price" %} {{ product.price }}</h1>
                 <div class="description">
                     <div class="details details1">
+
                         <h3> {% trans "Name:" %}</h3>
-                        
+
                         <h3>{% trans "Description:" %}</h3>
-                    
+
                         <h3>{% trans "Measurements:" %}</h3>
                     
                         <h3>{% trans "@mail:" %}</h3>
@@ -40,9 +41,14 @@
                         <h3>{% trans "Mobile:" %}</h3>
                     </div>
                     <div class="details">
-                        <h3>{{product.name}}</h3>
-
-                        <h3>{{product.description}}</h3>
+                        {% get_current_language as LANGUAGE_CODE %}
+                        {% if LANGUAGE_CODE == "lt" %}
+                            <h3>{{product.name_lt}}</h3>
+                            <h3>{{product.description}}</h3>
+                        {% else %}
+                            <h3>{{product.name_en}}</h3>
+                            <h3>{{product.description_en}}</h3>
+                        {% endif %}
 
                         <h3>{% trans "Height" %}-{{product.height}}cm {% trans "width" %}-{{product.whith}}cm {% trans "length"%}-{{product.lenght}}cm</h3>
 

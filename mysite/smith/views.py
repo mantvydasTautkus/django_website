@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.http import HttpResponse, request
 from .models import Comment, Landing_photos, Product, GaleryItem, ProductImages, GaleryImages
 from django.core.paginator import Paginator
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext
 from .forms import SnippetForm
 from django.shortcuts import redirect
 from django.contrib.auth.forms import AuthenticationForm, User
@@ -92,13 +92,13 @@ def register(request):
             # tikriname, ar neužimtas username
             if User.objects.filter(username=username).exists():
                 messages.error(
-                    request, f'Vartotojo vardas {username} užimtas!')
+                    request, gettext("User name"), {username}, gettext("taken"),"!")
                 return redirect('register')
             else:
                 # tikriname, ar nėra tokio pat email
                 if User.objects.filter(email=email).exists():
                     messages.error(
-                        request, f'Vartotojas su el. paštu {email} jau užregistruotas!')
+                        request, gettext("User with @mail"), {email}, gettext("allready exists"),"!")
                     return redirect('register')
                 else:
                     # jeigu viskas tvarkoje, sukuriame naują vartotoją
@@ -106,7 +106,7 @@ def register(request):
                     return render(request, "login.html")
 
         else:
-            messages.error(request, 'Slaptažodžiai nesutampa!')
+            messages.error(request, gettext("Passwords do not mach"),"!")
             return redirect('register')
     return render(request, 'register.html')
 

@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&family=PT+Serif&family=Titillium+Web:wght@300&display=swap');
+
 body{
-margin: 0;
-background: rgb(0,0,0);
-background: radial-gradient(circle, rgba(0,0,0,0.06486344537815125) 0%, rgba(0,0,0,0.20211834733893552) 51%, rgba(0,0,0,0.06206232492997199) 100%);
+    font-family: 'Signika', sans-serif;
+    margin: 0;
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,0.06486344537815125) 0%, rgba(0,0,0,0.20211834733893552) 51%, rgba(0,0,0,0.06206232492997199) 100%);
 }
 

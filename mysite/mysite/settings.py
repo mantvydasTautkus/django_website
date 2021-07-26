@@ -77,8 +77,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'lt'
+
 
 LANGUAGES = (
     ('en-us', _('English')),
