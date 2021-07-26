@@ -1,0 +1,155 @@
+
+.slideshow-container {
+    max-width: 1350px;
+    max-height: 800px;
+    position: relative;
+    margin: 0 auto
+}
+
+.slide_img{
+    width: 1350px;
+    height: 800px;
+    object-fit: cover;
+}
+.slideshow-inner{
+    object-fit: cover;
+}
+button{
+    background: none;
+    border: none;
+    width: 20px;
+    
+}
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    color: #222428;
+    font-weight: bold;
+    font-size: 50px;
+    transition: .6s ease;
+}
+
+.next {
+    right: -50px;
+    border-radius: 3px;
+}
+
+.prev {
+    left: -50px;
+    border-radius: 3px;
+}
+
+.prev:hover,
+.next:hover {
+    color: #f2f2f2;
+    background-color: rgba(0, 0, 0, 0.8)
+}
+
+
+.dot_wrapper{
+    position: absolute;
+    top: 90%;
+    left: 45%;
+    z-index: 2;
+}
+.dot {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color .6s ease
+}
+
+.active,
+.dot:hover {
+    background-color: #717171
+}
+.mySlides{
+    justify-content: center;
+}
+@media only screen and (max-width: 1600px) {
+    .prev,
+    .next {
+        right: 30px;
+        color: white;
+        width: 50px;
+    }
+    .prev{
+        left: 30px;
+    }
+
+@media only screen and (max-width: 1500px) {
+    .slideshow-container {
+        max-width: 100%;
+        max-height: 800px;
+        position: relative;
+        margin: 0 auto
+    }
+    .slide_img{
+        max-height: 800px;
+        width: 100%;
+        object-fit: cover;
+    }
+    .slide{
+        margin: 0 auto;
+    }
+}
+@media only screen and (max-width: 1250px) {
+    .slideshow-container {
+        max-width: 100%;
+        max-height: 700px;
+        position: relative;
+        margin: 0 auto
+    }
+    .slide_img{
+        max-height: 700px;
+        width: 100%;
+        object-fit: cover;
+    }
+    .slide{
+        margin-top: 0px;
+    }
+    .dot_wrapper{
+        top: 60%;
+}
+@media only screen and (max-width: 1250px) {
+    .slideshow-container {
+        max-height: 500px;
+    }
+    .slide_img{
+        max-height: 500px;
+    }
+}
+@media only screen and (max-width: 850px) {
+    .slideshow-container {
+        max-height: 400px;
+    }
+    .slide_img{
+        max-height: 400px;
+    }
+        .dot_wrapper{
+        top: 45%;
+        }
+    .dot_wrapper{
+        display: none;
+    }
+}
+@media only screen and (max-width: 650px) {
+    .slideshow-container {
+        max-height: 300px;
+    }
+    .slide_img{
+        max-height: 300px;
+    }
+    .slide{
+        display: none;
+    }
+}
+

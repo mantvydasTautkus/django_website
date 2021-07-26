@@ -11,8 +11,11 @@ urlpatterns = [
     path("subscribe/", views.subscribe, name='subscribe'),
     path("admin/", views.subscribe, name='admin'),
     path("galery/", views.galery, name="galery"),
-    path("galery/<int:galery_item_id>", views.galery_item_view, name="galery_item"),
+    path("galery/<int:galery_item_id>", views.galery_item, name="galery_item"),
     path("abaut_us/", views.abaut_us, name="abaut_us"),
+    path("register/", views.register, name="register"),
+    path("login/", views.login_view, name="login"),
+    path("logout/", views.lgout_view, name="logout"),
     path("snippet/", views.add_comment, name="add_comment"),
     path('i18n/', include('django.conf.urls.i18n')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,157 @@
+
+.slide{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px;
+}
+.single_slideshow-container {
+    max-width: 1000px;
+    max-height: 900px;
+    position: relative;
+    margin: 0 auto
+}
+
+.single_slide_img{
+    height: 800px;
+    width: 900px;
+    object-fit:contain;
+}
+.single_prev,
+.single_next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    margin-top: -22px;
+    color: #222428;
+    font-weight: bold;
+    font-size: 150px;
+}
+
+.single_next {
+    right: -150px;
+    border-radius: 3px 3px 3px 3px;
+    width: 100px;
+    text-align: center;
+}
+
+.single_prev {
+    left: -150px;
+    border-radius: 3px 3px 3px 3px;
+    width: 100px;
+    text-align: center;
+}
+
+.descriptin_wrapper{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.slide{
+    margin: 0px 0px;
+}
+
+.descriptin_wrapper{
+    width: 1350px;
+    margin: 0 auto;
+    padding: 30px;
+}
+.description{
+    display: flex;
+    flex-direction: row;
+}
+.details{
+    border: solid black 1px;
+}
+.details1{
+    border-right: none;
+}
+h3{
+    margin: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .single_slideshow-container {
+        max-width: 800px;
+        max-height: 800px;
+}
+
+    .single_slide_img{
+        height: 800px;
+        width: 800px;
+    }
+
+    .single_next {
+    right: -20px;
+    color: white;
+}
+
+.single_prev {
+    left: -20px;
+    color: white;
+}
+
+}
+
+@media only screen and (max-width: 880px) {
+    .single_slideshow-container {
+        max-width: 600px;
+        max-height: 600px;
+}
+
+    .single_slide_img{
+        height: 600px;
+        width: 600px;
+    }
+    .single_next {
+        right: -10px;
+
+    }
+
+    .single_prev {
+        left: -10px;
+    }
+
+}
+@media only screen and (max-width: 600px) {
+    .single_slideshow-container {
+        max-width: 100%;
+        max-height: 500px;
+}
+
+    .single_slide_img{
+        height: 500px;
+        width: 100%;
+    }
+    .single_next {
+        right: -10px;
+        font-size: 50px;
+        width: 50px;
+    }
+
+    .single_prev {
+        left: -10px;
+        font-size: 50px;
+        width: 50px;
+    }
+    .descriptin_wrapper{
+        font-size: 10px;
+    }
+    h3{
+        margin: 5px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .single_slideshow-container {
+        max-width: 100%;
+        max-height: 500px;
+}
+
+    .single_slide_img{
+        height: 500px;
+        width: 100%;
+    }
+}

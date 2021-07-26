@@ -1,0 +1,129 @@
+.product_section_wrapper{
+    width: 1350px;
+    margin: 0 auto;
+}
+.product_headline{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.line{
+    height: 2px;
+    background-color: rgb(56, 35, 35);
+    width: 25%;
+}
+h1{
+    width: 70%;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.grid{
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.product{
+    object-fit: cover;
+    width: 450px;
+    height: 450px;
+
+}
+a{
+    text-decoration: none;
+}
+.product_text{
+    position: relative;
+    top: -50%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+    height: 0;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px rgb(0, 0, 0);
+    
+}
+h2{
+    margin: 0px auto;
+    font-size: 50px;
+}
+p{
+    margin: 0 auto;
+    font-size: 30px;
+}
+.product_wrapper:hover .product_text{
+    z-index: 0;
+}
+
+.product_wrapper:hover .product {
+    filter: grayscale(90%);
+    transition: 0.3s;
+}
+.paginator{
+    padding: 20px 0px;
+    display: flex;
+    justify-content: center;
+
+}
+.page_links{
+    display: flex;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 1600px) {
+    .product{
+        width: 100%;
+        height: 100%;
+    }
+    .product_section_wrapper{
+        width: 90%;
+    }
+
+}
+
+@media only screen and (max-width: 1250px) {
+        .grid{
+        grid-template-columns: 1fr 1fr ;
+        }
+    .product_section_wrapper{
+        width: 90%;
+        }
+    .line{
+        width: 15%;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .product_headline{
+        font-size: 30px;
+    }
+}
+@media only screen and (max-width: 750px) {
+    .product_headline{
+        font-size: 25px;
+    }
+}
+@media only screen and (max-width: 650px) {
+    .grid{
+        grid-template-columns: 1fr ;
+    }
+    .product_headline{
+        width: 95%;
+        font-size: 20px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        font-size: 30px;
+        text-align: center;
+    }
+    .product_section_wrapper{
+        width: 90%;
+        margin-top: 80px ;
+    }
+    .line{
+        display: none;
+    }
+}
+

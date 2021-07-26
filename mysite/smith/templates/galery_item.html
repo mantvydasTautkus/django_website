@@ -2,15 +2,26 @@
 
 {% block content %}
 
-        {% for each in photos %}
+    <section class="slide">
+        <div class="single_slideshow-container slideshow-container">
+            <div class="single_slideshow-inner slideshow-inner">
+    
+                {% for each in photos %}
+                    <div class="mySlides">
+                        <img class="single_slide_img" src="..\media\{{ each.images }}" alt="..." />
+                    </div>
+                {% endfor %}
+    
+                <div class="mySlides">
+                    <img class="single_slide_img" src="..\media\{{ galery_item.image }}" alt="..." />
+                </div>
+            </div>
+            <div>
+                <button class="single_prev prev" onclick="plusSlides(-1)">&#10094;</button>
+                <button class="single_next next" onclick="plusSlides(1)">&#10095;</button>
+            </div>
+        </div>
+    
+    </section>
 
-            <p>{{ each.images}}</p>
-            <img src="..\media\{{each.images}}" alt="...">
-
-        {% endfor %}
-
-
-        <img src="..\media\{{post.image}}" alt="...">
-
-<h1>hellooo </h1>
 {% endblock %}

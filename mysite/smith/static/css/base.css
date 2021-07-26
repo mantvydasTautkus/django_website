@@ -1,25 +1,6 @@
 body{
-    background-color: aqua;
+margin: 0;
+background: rgb(0,0,0);
+background: radial-gradient(circle, rgba(0,0,0,0.06486344537815125) 0%, rgba(0,0,0,0.20211834733893552) 51%, rgba(0,0,0,0.06206232492997199) 100%);
 }
 
-header{
-    background-color: brown;
-}
-ul{
-    height: 8vh;
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    list-style: none;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 20px;
-}
-a{
-    text-decoration: none;
-}
-
-img{
-    width: 200px;
-    height: 200px;
-}
